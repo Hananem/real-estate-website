@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,200;1,500&family=Poppins:ital,wght@0,200;0,300;0,800;1,100;1,300;1,600&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,900;1,300;1,500;1,700&display=swap');
+html{
+    font-family: 'Nunito', 'Poppins', 'Questrial',sans-serif;
+
+}
+
+input{
+    background:transparent;
+}
+
+.transparent{
+    background:transparent;
+
+}
+
+.transition-a{
+    transform: all 0.3s ease-in-out;
+}
+
+.shadow{
+    box-shadow :0 0 0.8rem 0.25rem rgba(0, 0, 0, 0.1);
+}

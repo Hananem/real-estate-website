@@ -1,0 +1,170 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Testing on phone offline */
+
+
+html {
+  @apply scroll-smooth;
+}
+
+*::-webkit-scrollbar {
+  @apply w-[5px] h-[5px];
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded bg-slate-400;
+}
+body {
+  @apply  bg-main-bg text-[#334155] dark:bg-main-dark dark:text-[#cbd5e1]  ;
+
+
+}
+.btn {
+  @apply px-4 py-[0.35rem] rounded-lg  sm:cursor-pointer !uppercase flex-shrink-0;
+}
+
+.btn-primary {
+  @apply bg-primary text-[#fff] hover:bg-[#f7751e] shadow-md shadow-primary/60;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-[#fff] hover:bg-[#02293e];
+}
+
+
+
+
+.heading {
+  @apply text-center;
+}
+
+.title {
+  @apply text-[27px] text-secondary font-bold;
+}
+
+.subtitle {
+  @apply text-sm text-primary 
+}
+.icon-box {
+  @apply  flex-shrink-0 rounded-full w-9 h-9 flex items-center justify-center hover:bg-secondaryOrange sm:cursor-pointer;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  @apply hidden;
+}
+
+/*Up Button*/
+
+.up-btn {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.up-btn.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Accordion */
+.accordion.active {
+    @apply text-primary;
+  }
+  
+  .isOpen {
+    @apply max-h-screen p-4;
+  }
+  .modal.open,
+  .dialog.open {
+    @apply translate-x-0 opacity-100 pointer-events-auto;
+  }
+
+  .mobile-modal.open,
+.filter-modal.open,
+.mobile-dialog.open,
+.filter-dialog.open {
+  @apply translate-x-0 opacity-100 pointer-events-auto;
+}
+
+.dropdown.show {
+  @apply block;
+}
+.filter-modal {
+  @apply fixed top-0 left-0 z-50 w-full h-full transition-opacity opacity-0 pointer-events-none bg-[#000]/50 md:static md:opacity-100 md:pointer-events-auto;
+}
+
+.filter-dialog {
+  @apply absolute right-0  p-3 md:p-0 bg-[#fff] dark:bg-card-dark h-screen max-w-[300px] translate-x-[500px] w-full max-h-screen overflow-auto transition-transform md:static md:max-w-full md:translate-x-0 md:max-h-fit md:h-fit md:bg-main-bg md:dark:!bg-main-dark;
+}
+
+.mobile-modal.open,
+.filter-modal.open,
+.mobile-dialog.open,
+.filter-dialog.open {
+  @apply translate-x-0 opacity-100 pointer-events-auto;
+}
+
+.modal.open,
+.dialog.open {
+  @apply translate-x-0 opacity-100 pointer-events-auto;
+}
+/* Testimonial slides */
+.activeSlide {
+  @apply translate-x-0 opacity-100;
+}
+.lastSlide {
+  @apply -translate-x-full opacity-100;
+}
+.nextSlide {
+  @apply translate-x-full opacity-100;
+}
+
+
+
+/* Check box & radio box */
+.input-check label,
+.input-radio label {
+  @apply relative flex items-center cursor-pointer select-none;
+}
+
+.input-check input[type="checkbox"],
+.input-radio input[type="radio"] {
+  @apply absolute opacity-0 cursor-pointer;
+}
+
+.input-check label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 border rounded border-primary;
+}
+
+.input-check input[type="checkbox"]:checked + label::before {
+  content: "✔";
+  @apply grid place-items-center text-[#b3c9b9] text-[0.7rem] bg-primary;
+}
+
+.input-radio label::before {
+  content: "";
+  @apply w-4 h-4 mr-2 rounded-full border !border-primary;
+}
+.input-radio label::after {
+  content: "";
+  @apply absolute w-2 h-2 top-1/2 left-0 -translate-y-1/2 scale-0 ml-[0.25rem] bg-primary  rounded-full;
+}
+
+.input-radio input[type="radio"]:checked + label::after {
+  @apply scale-100 -translate-y-1/2;
+}
+
+
+.loader {
+  border-block-start-color: transparent;
+  animation: rotate 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
